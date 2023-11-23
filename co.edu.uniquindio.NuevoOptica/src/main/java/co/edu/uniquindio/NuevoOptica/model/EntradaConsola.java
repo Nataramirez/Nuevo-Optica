@@ -3,6 +3,7 @@ package co.edu.uniquindio.NuevoOptica.model;
 import co.edu.uniquindio.NuevoOptica.controller.Crud;
 import co.edu.uniquindio.NuevoOptica.controller.Proceso;
 import co.edu.uniquindio.NuevoOptica.enums.GradoLente;
+import co.edu.uniquindio.NuevoOptica.enums.ProblemaVisual;
 import co.edu.uniquindio.NuevoOptica.enums.TipoUsuario;
 
 import javax.swing.*;
@@ -230,13 +231,42 @@ public class EntradaConsola {
             while(cerrar == 1){
                 String gradoLente = (String) JOptionPane.showInputDialog(
                         null,
-                        "Seleccione el diagnostico que desea eliminar",
+                        "Seleccione el Grado del Lente",
                         "DIAGNOSTICO", JOptionPane.DEFAULT_OPTION,
                         null,
                         GradoLente.tipoGradoLente(),
                         null
                 );
-                System.out.println(gradoLente);
+
+                GradoLente lenteEncontrado;
+                if(gradoLente != null){
+                    for (GradoLente lente: GradoLente.values()) {
+                        if(lente.getNombre().equals(gradoLente)){
+                            lenteEncontrado = lente;
+                        }
+                    }
+                }else {
+                    cerrar = cerrarAplicacion();
+                }
+
+                String problemaVisual = (String) JOptionPane.showInputDialog(
+                        null,
+                        "Seleccione el Problema Visual",
+                        "DIAGNOSTICO", JOptionPane.DEFAULT_OPTION,
+                        null,
+                        ProblemaVisual.tipoProblemaVisual(),
+                        null
+                );
+                ProblemaVisual problemaVisual1;
+                if(problemaVisual != null){
+                    for (ProblemaVisual problemaVisual2: ProblemaVisual.values()) {
+                        if(problemaVisual2.getNombre().equals(gradoLente)){
+                            problemaVisual1 = problemaVisual2;
+                        }
+                    }
+                }else {
+                    cerrar = cerrarAplicacion();
+                }
             }
         }
         return cerrar;

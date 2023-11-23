@@ -1,9 +1,11 @@
 package co.edu.uniquindio.NuevoOptica.model;
 
+import co.edu.uniquindio.NuevoOptica.service.IEmpleado;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vendedor extends Empleado{
+public class Vendedor extends Empleado implements IEmpleado {
     private float comision;
     public List<Venta> listaVentas = new ArrayList<>();
 

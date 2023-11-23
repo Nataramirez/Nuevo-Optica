@@ -17,4 +17,12 @@ public enum ProblemaVisual {
     public double getPrecio() {
         return precio;
     }
+
+    public static String[] tipoProblemaVisual(){
+        String[] problemaVisual = {
+                ProblemaVisual.MIOPIA.getNombre(),
+                ProblemaVisual.ASTIGMATISMO.getNombre()
+        };
+        return problemaVisual;
+    }
 }

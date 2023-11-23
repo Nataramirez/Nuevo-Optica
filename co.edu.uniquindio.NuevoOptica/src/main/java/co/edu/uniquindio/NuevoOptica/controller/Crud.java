@@ -27,21 +27,21 @@ public enum Crud {
             tipoCrud = new String[] {
                     Crud.CREATE.getNombre() + "cliente",
                     Crud.READ.getNombre() + "clientes",
-                    Crud.UPDATE.getNombre() + "cliente",
+                    //Crud.UPDATE.getNombre() + "cliente",
                     Crud.DELETE.getNombre() + "cliente",
             };
         }else if(proceso.equalsIgnoreCase(Proceso.OPTOMETRA.getNombre())) {
             tipoCrud = new String[] {
                     Crud.CREATE.getNombre() + "optometra",
                     Crud.READ.getNombre() + "optometras",
-                    Crud.UPDATE.getNombre() + "optometra",
+                    //Crud.UPDATE.getNombre() + "optometra",
                     Crud.DELETE.getNombre() + "optometra",
             };
         } else if (proceso.equalsIgnoreCase(Proceso.VENDEDOR.getNombre())) {
             tipoCrud = new String[] {
                     Crud.CREATE.getNombre() + "vendedor",
                     Crud.READ.getNombre() + "vendedores",
-                    Crud.UPDATE.getNombre() + "vendedor",
+                    //Crud.UPDATE.getNombre() + "vendedor",
                     Crud.DELETE.getNombre() + "vendedor",
             };
         } else if (proceso.equalsIgnoreCase(Proceso.DIAGNOSTICO.getNombre())) {

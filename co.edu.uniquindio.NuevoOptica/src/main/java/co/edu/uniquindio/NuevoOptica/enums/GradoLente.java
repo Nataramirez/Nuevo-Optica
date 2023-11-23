@@ -11,6 +11,7 @@ public enum GradoLente {
     private String nombre;
     private double precio;
 
+
     GradoLente(String nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
