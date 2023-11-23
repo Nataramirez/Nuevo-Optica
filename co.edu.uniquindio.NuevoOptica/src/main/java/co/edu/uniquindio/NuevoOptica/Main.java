@@ -1,8 +1,6 @@
 package co.edu.uniquindio.NuevoOptica;
 
-import co.edu.uniquindio.NuevoOptica.database.ClienteDB;
-import co.edu.uniquindio.NuevoOptica.database.OptometraDB;
-import co.edu.uniquindio.NuevoOptica.database.VendedorDB;
+import co.edu.uniquindio.NuevoOptica.database.*;
 import co.edu.uniquindio.NuevoOptica.enums.*;
 import co.edu.uniquindio.NuevoOptica.model.Diagnostico;
 import co.edu.uniquindio.NuevoOptica.model.EntradaConsola;
@@ -47,14 +45,45 @@ public class Main {
             );
         }
 
-        Diagnostico diagnostico1 = optica.crearDiagnostico(
-                GradoLente.GRADO_075,
-                ProblemaVisual.ASTIGMATISMO,
-                optica.getListaClientes().get(1),
+        optica.crearDiagnostico(
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_1.getGradoLente(),
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_1.getProblemaVisual(),
+                optica.getListaClientes().get(0),
                 optica.obtenerOptometras().get(1)
         );
+        optica.crearDiagnostico(
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_2.getGradoLente(),
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_2.getProblemaVisual(),
+                optica.getListaClientes().get(1),
+                optica.obtenerOptometras().get(0)
+        );
+        optica.crearDiagnostico(
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_3.getGradoLente(),
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_3.getProblemaVisual(),
+                optica.getListaClientes().get(2),
+                optica.obtenerOptometras().get(0)
+        );
+        optica.crearDiagnostico(
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_4.getGradoLente(),
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_4.getProblemaVisual(),
+                optica.getListaClientes().get(3),
+                optica.obtenerOptometras().get(1)
+        );
+        optica.crearDiagnostico(
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_5.getGradoLente(),
+                DiagnosticoDB.DIAGNOSTICO_CLIENTE_5.getProblemaVisual(),
+                optica.getListaClientes().get(4),
+                optica.obtenerOptometras().get(0)
+        );
 
-        optica.crearLente(diagnostico1, Montura.ACERO_INOXIDABLE, Filtro.UV);
+
+
+        optica.crearLente(optica.getListaDiagnosticos().get(0),LenteDB.LENTE_CLIENTE_1.getMontura(),LenteDB.LENTE_CLIENTE_1.getFiltro());
+        optica.crearLente(optica.getListaDiagnosticos().get(1),LenteDB.LENTE_CLIENTE_2.getMontura(),LenteDB.LENTE_CLIENTE_2.getFiltro());
+        optica.crearLente(optica.getListaDiagnosticos().get(2),LenteDB.LENTE_CLIENTE_3.getMontura(),LenteDB.LENTE_CLIENTE_3.getFiltro());
+        optica.crearLente(optica.getListaDiagnosticos().get(3),LenteDB.LENTE_CLIENTE_4.getMontura(),LenteDB.LENTE_CLIENTE_4.getFiltro());
+        optica.crearLente(optica.getListaDiagnosticos().get(4),LenteDB.LENTE_CLIENTE_5.getMontura(),LenteDB.LENTE_CLIENTE_5.getFiltro());
+
         return optica;
     }
 
